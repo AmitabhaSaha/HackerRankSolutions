@@ -1,0 +1,24 @@
+
+Link: https://www.hackerrank.com/challenges/counting-valleys/problem
+
+
+func countingValleys(n: Int, s: String) -> Int {
+    
+    var directions: String = ""
+    var valleys = 0
+    var current: Int = 0
+    for char in s {
+        if String(char) == "D"{
+            current = current - 1
+            directions += (",\(current)")
+        } else {
+            current = current + 1
+            directions += (",\(current)")
+        }
+        if directions.suffix(5) == ",-1,0" {
+            valleys+=1
+        }
+    }
+    
+    return valleys
+}
